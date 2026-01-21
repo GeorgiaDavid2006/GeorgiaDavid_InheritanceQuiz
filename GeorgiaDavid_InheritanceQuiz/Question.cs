@@ -79,6 +79,23 @@ namespace GeorgiaDavid_InheritanceQuiz
         public TrueOrFalseQuestion(string questionText, bool answerAsBool) : base (questionText, answerAsBool.ToString())
         {
             _questionText = questionText;
+            _answerText = answerAsBool.ToString();
+        }
+
+        public override bool CheckAnswer()
+        {
+            Console.WriteLine("Enter T for true or F for false");
+
+            string playerAnswer = Console.ReadLine();
+
+            if(playerAnswer == _answerText)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 
