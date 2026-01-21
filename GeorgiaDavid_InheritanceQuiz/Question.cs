@@ -78,7 +78,8 @@ namespace GeorgiaDavid_InheritanceQuiz
     {
         public TrueOrFalseQuestion(string questionText, bool answerAsBool) : base (questionText, answerAsBool.ToString())
         {
-
+            _questionText = questionText;
+            
         }
     }
 
