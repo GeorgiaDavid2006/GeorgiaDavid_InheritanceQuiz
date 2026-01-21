@@ -1,0 +1,2 @@
+C:\Users\W0512995\source\repos\GeorgiaDavid_InheritanceQuiz\GeorgiaDavid_InheritanceQuiz\obj\Debug\GeorgiaDavid_InheritanceQuiz.csproj.AssemblyReference.cache
+C:\Users\W0512995\source\repos\GeorgiaDavid_InheritanceQuiz\GeorgiaDavid_InheritanceQuiz\obj\Debug\GeorgiaDavid_InheritanceQuiz.csproj.CoreCompileInputs.cache
