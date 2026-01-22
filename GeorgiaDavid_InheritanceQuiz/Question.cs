@@ -17,7 +17,7 @@ namespace GeorgiaDavid_InheritanceQuiz
             _answerText = answerText;
         }
 
-        void Ask()
+       public void Ask()
         {
             Console.WriteLine(_questionText);
         }
