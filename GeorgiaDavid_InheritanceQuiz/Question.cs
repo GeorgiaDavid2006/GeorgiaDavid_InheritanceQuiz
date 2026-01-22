@@ -19,7 +19,7 @@ namespace GeorgiaDavid_InheritanceQuiz
 
         void Ask()
         {
-            Console.WriteLine("QuestionText");
+            Console.WriteLine(_questionText);
         }
 
         public virtual bool CheckAnswer()
