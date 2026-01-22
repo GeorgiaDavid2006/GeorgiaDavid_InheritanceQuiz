@@ -56,8 +56,6 @@ namespace GeorgiaDavid_InheritanceQuiz
 
         static void Main(string[] args)
         {
-           Console.WriteLine("Welcome to the Kirby Lore Quiz");
-
            Question question1 = new Question(quizQuestions[0], textAnswers[0]);
            Question question2 = new Question(quizQuestions[1], textAnswers[1]);
            Question question3 = new Question(quizQuestions[2], textAnswers[2]);
@@ -67,6 +65,12 @@ namespace GeorgiaDavid_InheritanceQuiz
            TrueOrFalseQuestion question7 = new TrueOrFalseQuestion(quizQuestions[6], true);
            TrueOrFalseQuestion question8 = new TrueOrFalseQuestion(quizQuestions[7], false);
            TrueOrFalseQuestion question9 = new TrueOrFalseQuestion(quizQuestions[8], true);
+
+           Console.WriteLine("Welcome to the Kirby Lore Quiz");
+           Console.ReadKey();
+           Console.Clear();
+
+           AskQuestion();
         }
 
         static void AskQuestion()
