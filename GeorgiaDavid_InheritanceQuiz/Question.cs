@@ -27,6 +27,7 @@ namespace GeorgiaDavid_InheritanceQuiz
             Console.WriteLine("Enter your answer");
 
             string playerAnswer = Console.ReadLine();
+            Console.Clear();
 
             if(playerAnswer == _answerText)
             {
@@ -58,10 +59,11 @@ namespace GeorgiaDavid_InheritanceQuiz
 
             for (int answers = 0; answers < _answerOptions.Length; answers++)
             {
-                Console.WriteLine($"{answers + 1}{_answerOptions[answers]}");
+                Console.WriteLine($"{answers + 1} {_answerOptions[answers]}");
             }
 
             string playerAnswer = Console.ReadLine();
+            Console.Clear();
 
             if (playerAnswer == _answerText)
             {
@@ -84,9 +86,10 @@ namespace GeorgiaDavid_InheritanceQuiz
 
         public override bool CheckAnswer()
         {
-            Console.WriteLine("Enter T for true or F for false");
+            Console.WriteLine("Type True or False");
 
             string playerAnswer = Console.ReadLine();
+            Console.Clear();
 
             if(playerAnswer == _answerText)
             {

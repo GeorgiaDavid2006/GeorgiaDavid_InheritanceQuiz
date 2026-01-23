@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,46 +12,46 @@ namespace GeorgiaDavid_InheritanceQuiz
     {
         static string[] quizQuestions =
         {
-            "Question 1",
-            "Question 2",
-            "Question 3",
-            "Question 4",
-            "Question 5",
-            "Question 6",
-            "Question 7",
-            "Question 8",
-            "Question 9"
+            "What is the name of the planet Kirby lives on?",
+            "What is Kirby's favourite food?",
+            "How tall is Kirby in centimeters?",
+            "Which is NOT the name of one of the three mage sisters?",
+            "Who is the final boss of Kirby's Adventure(1993)?",
+            "Elfilin is the other half of the being known as...",
+            "Galacta Knight was one of the Four Heroes of Yore",
+            "Marx is the name of the character who betrays Kirby in Kirby's Return To Dreamland",
+            "President Haltmann dies at the end Kirby:Planet Robobot"
         };
 
         static string[] textAnswers =
         {
-            "Text Answer 1",
-            "Text Answer 2",
-            "Text Answer 3"
+            "Planet Popstar",
+            "Maxim Tomato",
+            "8"
         };
 
         static string[] multipleChoiceAnswers1 =
         {
-            "Multiple Choice Answer 1",
-            "Multiple Choice Answer 2",
-            "Multiple Choice Answer 3",
-            "Multiple Choice Answer 4"
+            "Flamberge",
+            "Francessca",
+            "Zan Partizanne",
+            "Francisca"
         };
 
         static string[] multipleChoiceAnswers2 =
         {
-            "Multiple Choice Answer 1",
-            "Multiple Choice Answer 2",
-            "Multiple Choice Answer 3",
-            "Multiple Choice Answer 4"
+            "King Dedede",
+            "Zero",
+            "Nightmare",
+            "Kracko"
         };
 
         static string[] multipleChoiceAnswers3 =
         {
-            "Multiple Choice Answer 1",
-            "Multiple Choice Answer 2",
-            "Multiple Choice Answer 3",
-            "Multiple Choice Answer 4"
+            "Fecto Elfilin",
+            "Fecto Forgo",
+            "Chaos Elfilis",
+            "Fecto Elfilis"
         };
 
     static Question[] questions = 
@@ -80,17 +82,63 @@ namespace GeorgiaDavid_InheritanceQuiz
 
         static void Main(string[] args)
         {
-           Console.WriteLine("Welcome to the Kirby Lore Quiz");
+           Console.WriteLine("Welcome to the Kirby Triva Quiz");
            Console.ReadKey();
            Console.Clear();
 
-           AskQuestion(0);
+           for (int q = 0; q < quizQuestions.Length; q++)
+           {
+              AskQuestion(q);
+           }
+
+            DisplayScore();
+            Console.ReadKey();
+            Console.Clear();
+
+            if (score == 9)
+            {
+                Console.WriteLine("100%! Congratulations!");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else if (score < 9 && score > 0)
+            {
+                Console.WriteLine("Well done");
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Failed!");
+                Console.ReadKey();
+                Console.Clear();
+            }
         }
 
         static void AskQuestion(int currentQuestion)
         {
+            DisplayScore();
+
             questions[currentQuestion].Ask();
-            questions[currentQuestion].CheckAnswer();
+
+            if (questions[currentQuestion].CheckAnswer() == true)
+            {
+                Console.WriteLine("Correct");
+                score++;
+                Console.ReadKey();
+                Console.Clear();
+            }
+            else
+            {
+                Console.WriteLine("Incorrect");
+                Console.ReadKey();
+                Console.Clear();
+            }
+        }
+
+        static void DisplayScore()
+        {
+            Console.WriteLine("Score: " + score);
         }
     }
 }
